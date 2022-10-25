@@ -96,7 +96,7 @@ module.exports= {
         PartyA: 254742734120,
         PartyB: 174379,
         PhoneNumber: 254742734120,
-        CallBackURL: "https://62a8-41-89-227-170.ngrok.io",
+        CallBackURL: "https://a101-41-80-96-181.ngrok.io",
          AccountReference: "Daraja Simulation",
         TransactionDesc: `Payment of `,
       },
