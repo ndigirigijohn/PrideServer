@@ -1,0 +1,192 @@
+//All products
+# GET http://localhost:8080/:page/:limit
+GET http://localhost:8080/1/1
+
+
+###
+//Product by id (from db)
+GET http://localhost:8080/6322af7cb6cfb9a17bedb540
+
+
+###
+//Product by identifier (client fed)
+GET http://localhost:8080/identifier/:identifier
+
+
+###
+//product by category
+GET http://localhost:8080/cat/:category/:page/:limit
+
+
+###
+POST http://localhost:8080/users/register
+Content-Type: application/json
+
+{
+    "username":"john oe",
+    "password":"test",
+
+    "email":"test@ail.com",
+    "phone":"123456789"
+}
+
+###
+GET http://localhost:8080/images/url
+###
+POST http://localhost:8080/
+Content-Type: application/json
+
+
+{ 
+    # "identifier":
+    # "T09"
+    ,
+    "name":
+    "-Pixi by Petra Glow Tonic"
+,
+    "price":
+    400
+    ,
+    "image":
+            "https://prideimages.s3.amazonaws.com/facemasks/T09.png"   
+      ,
+    "description":
+    "Pixi by Petra Glow Tonic for as long as we have, you know it's basically magic in a bottle. It's made with hero ingredients — such as glycolic acid, aloe vera, and witch hazel — to minimize the appearance of dark spots and promote clearer, softer skin"
+,
+  "category":
+    "toners"
+}
+
+###
+
+POST http://localhost:8080/codes/create
+Content-Type: application/json
+
+# {
+#     "skincode":"1000",
+#     "products":["C06","T02"]
+# }
+
+###
+GET http://localhost:8080/p/codes/g
+
+###
+GET http://localhost:8080/p/codes/g/111
+
+
+###
+GET http://localhost:8080/code/a/z/1010
+
+###
+GET http://localhost:8080/products/search/moisturizer
+###
+
+GET http://localhost:8080/users/check/jjjjj
+
+###
+POST http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+   "email":"test@ail.com",
+    "password":"test"
+}
+###
+POST http://localhost:8080/orders/
+Content-Type: application/json
+
+{
+   "userid":"oiuytfgjhkjlk;oijouhigyutfyr",
+    "items":[
+        {
+            "productid":"6322af7cb6cfb9a17bedb540",
+            "quantity":1
+        },
+        {
+            "productid":"6322af7cb6cfb9a17bedb541",
+            "quantity":1
+        }
+    ],
+    "total": 1000,
+    "count": 2,
+    "shipping": 100
+}
+
+###
+
+PUT http://localhost:8080/users/set/633a6b1dc1a7e9a85871a640
+Content-Type: application/json
+
+{
+    "code":"14440"
+}
+###
+POST http://localhost:8080/feedback
+Content-Type: application/json
+
+{
+   "email":"test@ail.com",
+    "name":"test",
+    "content":"test"
+}
+
+###
+GET http://localhost:8080/products/search//acid
+###
+
+POST http://localhost:8080/filters/categories
+Content-Type: application/json
+
+{
+   "categories":["toners","moisturizers","cleansers","masks","serums","exfoliators","sunscreen","lipcare","eye","acids","tools","sets"]
+}
+###
+
+POST http://localhost:8080/orders/get-auth-token
+
+###
+POST http://localhost:8080/orders/makeorder
+Content-Type: application/json
+
+{
+    "phone":"254742734120",
+    "amount":1,
+    "reference":"254742734120"
+}
+###
+POST http://localhost:8080/orders/mpesa/confirmation
+Content-Type: application/json
+
+{
+    "Body":{
+        "stkCallback":{
+            "MerchantRequestID":"1",
+            "CheckoutRequestID":"ws_CO_210520201000000000",
+            "ResultCode":0,
+            "ResultDesc":"The service request is processed successfully.",
+            "CallbackMetadata":{
+                "Item":[
+                    {
+                        "Name":"Amount",
+                        "Value":1
+                    },
+                    {
+                        "Name":"MpesaReceiptNumber",
+                        "Value":"LQ2KX2X4Z7"
+                    },
+                    {
+                        "Name":"Balance"
+                    },
+                    {
+                        "Name":"TransactionDate",
+                        "Value":20200521094501
+                    },
+                    {
+                        "Name":"PhoneNumber",
+                        "Value":254742734120
+                    }
+                ]
+            }
+        }
+    }
+}
