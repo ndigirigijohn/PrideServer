@@ -1,3 +1,5 @@
+GET http://localhost:8080
+###
 //All products
 # GET http://localhost:8080/:page/:limit
 GET http://localhost:8080/1/1
