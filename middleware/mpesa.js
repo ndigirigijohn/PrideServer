@@ -107,6 +107,7 @@ module.exports= {
   },
 
   confirmation: async (req, res, next) => {
+    console.log("confirmation",req.body)
     const {MerchantRequestId, CheckoutRequestID, ResultCode, ResultDesc} = req.body.Body.stkCallback;
     if(ResultCode==0){
       const {amount, phoneNumber, billRefNumber} = req.body.Body.stkCallback.CallbackMetadata.Item;
