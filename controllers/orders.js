@@ -5,10 +5,13 @@ connectDB()
 
 module.exports= {
     makeOrder:async(req, res)=>{
-        const {userid, items, count, shipping, total}=req.body
+        const {userId,name, email,phone, items, count, shipping, total}=req.body
         try{
             const result= await Order.create({
-                userid:userid,
+                userid:userId,
+                name:name,
+                email:email,
+                phone:phone,
                 items:items,
                 count:count,
                 shipping:shipping,

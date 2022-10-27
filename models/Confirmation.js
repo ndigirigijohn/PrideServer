@@ -1,45 +1,36 @@
 const mongoose= require('mongoose');
 const Schema = mongoose.Schema;
 
-const Order = new Schema({
-    userid : {
+const Confirmation = new Schema({
+    MerchantRequestID : {   
         type:String,
         required: true
     },
-    phone : {
+    CheckoutRequestID : {
         type:String,
         required: true
     },
-    email : {
+    ResultCode : {
+        type:Number,
+        required: true
+    },
+    ResultDesc : {
         type:String,
         required: true
     },
-    name : { 
-        type:String,
-        required: true
-    },
-    items : {
-        type:Array,
-        required:true
-    },
-    count : {
+    Amount : {
         type:Number,
         required:true
     },
-    shipping : {
-        type:Number,
+    PhoneNumber : {
+        type:String,
         required:true
     },
-    total : {
-        type:Number,
+    billRefNumber : { 
+        type:String,
         required:true
-    },
-    pending : {
-        type:Boolean,
-        default:true
     }
-
 
     
 });
-module.exports=mongoose.model('Order', Order);
+module.exports=mongoose.model('Confirmation', Confirmation);

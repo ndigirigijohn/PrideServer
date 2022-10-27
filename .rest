@@ -151,9 +151,23 @@ POST http://localhost:8080/orders/makeorder
 Content-Type: application/json
 
 {
-    "phone":"254742734120",
-    "amount":1,
-    "reference":"254742734120"
+    "userId":"633a6b1dc1a7e9a85871a640",
+    "name":"test",
+    "phone":254742734120,
+    "email":"john@gmail.com",
+    "count":2,
+    "shipping":1,
+    "total":1,
+    "items":[
+        {
+            "productid":"6322af7cb6cfb9a17bedb540",
+            "quantity":1
+        },
+        {
+            "productid":"6322af7cb6cfb9a17bedb541",
+            "quantity":1
+        }
+    ]
 }
 ###
 POST http://localhost:8080/orders/mpesa/confirmation
