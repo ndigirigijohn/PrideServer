@@ -25,11 +25,11 @@ POST http://localhost:8080/users/register
 Content-Type: application/json
 
 {
-    "username":"john oe",
-    "password":"test",
-
-    "email":"test@ail.com",
-    "phone":"123456789"
+    "username":"Mary Pride",
+    "password":"12345678",
+    "email":"mary@pride.com",
+    "phone":"254742734120",
+    "role":"admin"
 }
 
 ###
