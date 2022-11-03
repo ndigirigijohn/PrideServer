@@ -26,5 +26,15 @@ module.exports= {
         }
 
     },
+    getOrders:async(req, res)=>{
+        try{
+            const result= await Order.find()
+            res.json(result)
+        }
+        catch(err){
+            res.status(500).json({error:err.message})
+            console.log(err)
+        }
+    }
     
 }
