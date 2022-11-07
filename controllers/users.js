@@ -1,8 +1,13 @@
 const User = require ('../models/User')
 const bcrypt = require('bcrypt')
 module.exports = {
-    getUsers : async (req, res)=>{
-        res.send('Getting users')
+    getUsers: async (req, res) => {
+        try {
+            const users = await User.find()
+            res.json(users)
+        } catch (err) {
+            res.json({message: err})
+        }
     },
     register : async (req, res)=>{
         const {username, password, email, phone}= req.body;

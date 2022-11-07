@@ -10,12 +10,7 @@ const { orders } = require("./routes/orders");
 const { feedback } = require("./routes/feedback");
 
 
-
-
-
 const mongoose = require('mongoose');
-
-
 
 const app = express();
 app.use(express.json());
@@ -31,8 +26,6 @@ app.use('/images',images);
 app.use('/p/codes/g',codes);
 app.use('/orders',orders);
 app.use('/feedback',feedback);
-
-
 
 
 
