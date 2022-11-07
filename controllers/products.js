@@ -8,6 +8,19 @@ const Code = require ('../models/Code')
 connectDB()
 module.exports = {
     getProducts: async(req, res)=>{
+
+                try{
+                    const result = await Product.aggregate([{ $sample: { size: 9 } }])
+                    res.status(200).json(result)
+                    }
+                    catch(err){
+                        res.status(500).json({
+                            "Error":err.message
+                        })
+                    }
+        
+    },
+    getProductsByPage: async(req, res)=>{
         const {page, limit}= req.params
             if(page <1) {
                 return res.json({"error" : true,"message" : "invalid page number"});
@@ -18,8 +31,7 @@ module.exports = {
                         limit:limit
                     }
                 try{
-                    const result = await Product.aggregate([{ $sample: { size: 9 } }])
-                    // const result = await Product.find({},{},query)
+                    const result = await Product.find({},{},query)
                     res.status(200).json(result)
                     }
                     catch(err){

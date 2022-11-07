@@ -2,3 +2,9 @@ GET http://localhost:8080/orders/get/all
 
 ###
 GET http://localhost:8080/users/get/all
+
+###
+GET http://localhost:8080/all/random
+
+###
+GET http://localhost:8080/byPage/1/2

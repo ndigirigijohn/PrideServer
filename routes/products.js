@@ -8,13 +8,16 @@ const  {getProducts,
                searchByCategory,
                filterByCategory,
                filterByCategories,
+               getProductsByPage,
             } = require ('../controllers/products');
             
  products.get('/', (req, res)=>{
    res.status(200).json({message: 'Welcome to the Pride Server'});
 
  });
-products.get('/:page/:limit', getProducts);
+products.get('/all/random', getProducts);
+products.get('/bypage/:page/:limit', getProductsByPage);
+
 products.post('/', createProduct);
 products.get('/:id', getProduct);
 products.get('/code/a/z/:code', getProductByCode);
