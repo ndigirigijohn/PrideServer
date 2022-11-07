@@ -69,5 +69,25 @@ module.exports = {
         catch(err){
             res.status(500).json({'message':err.message})
         }
-    }
+    },
+    findUser: async (req, res)=>{
+        const {id} = req.params;
+        try{
+            const result = await User.findById(id);
+            res.json(result);
+        }
+        catch(err){
+            res.status(500).json({'message':err.message})
+        }
+    },
+    findUserByName: async (req, res)=>{
+        const {username} = req.params;
+        try{
+            const result = await User.findOne({username:username});
+            res.json(result);
+        }
+        catch(err){
+            res.status(500).json({'message':err.message})
+        }
+    },
 }
