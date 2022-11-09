@@ -2,7 +2,7 @@ GET http://localhost:8080
 ###
 //All products
 # GET http://localhost:8080/:page/:limit
-GET http://localhost:8080/1/1
+GET http://localhost:8080/all/random
 
 
 ###
@@ -40,8 +40,8 @@ Content-Type: application/json
 
 
 { 
-    # "identifier":
-    # "T09"
+    "identifier":
+    "TEST"
     ,
     "name":
     "-Pixi by Petra Glow Tonic"
