@@ -171,4 +171,27 @@ filterByCategories: async (req, res)=>{
 
     }
 },
+editProduct: async (req, res)=>{
+    const {id}=req.params;
+    const {identifier,
+        name, 
+        price,
+        image,
+         description, 
+         category}=req.body;
+         try {
+           const result =  await Product.updateOne({_id: ObjectId(id)}, {
+               identifier:identifier,
+               name:name,
+               price:price,
+               image:image,
+               description:description,
+               category:category
+           });
+           res.json(result);
+       }
+       catch(err){
+           res.status(500).json({'message':err.message})
+       }
+    },
 }

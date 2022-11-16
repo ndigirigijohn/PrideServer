@@ -9,6 +9,7 @@ const  {getProducts,
                filterByCategory,
                filterByCategories,
                getProductsByPage,
+               editProduct,
             } = require ('../controllers/products');
             
  products.get('/', (req, res)=>{
@@ -25,12 +26,6 @@ products.get('/products/search/:query', search);
 products.get('/products/search/:category/:query', searchByCategory);
 products.get('/filter/:category', filterByCategory);
 products.post('/filters/categories', filterByCategories);
-
-
-
-
-
-
-
+products.put('/:id', editProduct);
 
 module.exports = {products};
