@@ -10,6 +10,7 @@ const  {getProducts,
                filterByCategories,
                getProductsByPage,
                editProduct,
+               deleteProduct,
             } = require ('../controllers/products');
             
  products.get('/', (req, res)=>{
@@ -27,5 +28,5 @@ products.get('/products/search/:category/:query', searchByCategory);
 products.get('/filter/:category', filterByCategory);
 products.post('/filters/categories', filterByCategories);
 products.put('/:id', editProduct);
-
+products.delete('/:id', deleteProduct);
 module.exports = {products};

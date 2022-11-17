@@ -194,4 +194,14 @@ editProduct: async (req, res)=>{
            res.status(500).json({'message':err.message})
        }
     },
+    deleteProduct: async (req, res)=>{
+        const {id}=req.params;
+        try {
+          const result =  await Product.deleteOne({_id: ObjectId(id)});
+          res.json(result);
+      }
+      catch(err){
+          res.status(500).json({'message':err.message})
+      }
+       },
 }
