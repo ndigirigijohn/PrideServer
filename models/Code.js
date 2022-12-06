@@ -9,7 +9,10 @@ const codeSchema = new Schema({
     products : {
         type:Array,
         required:true
-    }
+    },
+    description : {
+        type:String,
+    },  
 
     
 });
