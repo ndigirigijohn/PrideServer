@@ -10,3 +10,18 @@ GET http://localhost:8080/all/random
 GET http://localhost:8080/byPage/1/2
 ###
 GET http://localhost:8080/users/find/byname/mary
+###
+
+POST http://localhost:8080/feedback/
+Content-Type: application/json
+
+{
+    "name": "Mary",
+    "email": "testemail@gmail.com",
+    "product": "test product  7",
+    "message": "Hello, I am Mary"
+
+}
+
+###
+GET http://localhost:8080/feedback/read

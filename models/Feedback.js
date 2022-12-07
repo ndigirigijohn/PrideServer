@@ -11,7 +11,11 @@ const feedbackSchema = new Schema({
         type:String,
         required:true
     },
-    content: {
+    product:{
+        type:String,
+        required:true
+    },
+    message: {
         type: String,
         required:true
     },
